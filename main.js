@@ -7,8 +7,8 @@ rightWristX=0;
 
 function preload()
 {
-    song = loadSound("music.mp3");
-    song_1=loadSound("")
+    song = loadSound("Clear.mp3");
+    song_1=loadSound("Pycres.mp3")
 }
 
 function setup()
