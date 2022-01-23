@@ -4,6 +4,11 @@ leftWristX=0;
 rightWristY = 0;
 leftWristY=0;
 rightWristX=0;
+song_status="";
+song_status_1="";
+scoreleftwrist=0;
+scorerightwrist=0;
+
 
 function preload()
 {
@@ -29,9 +34,39 @@ function setup()
     }
 
 
+
 function draw()
 {
     image(video, 0, 0, 600, 500);
+    song_status=song.isPlaying();
+    song_status_1=song_1.isPlaying();
+    fill("blue");
+    stroke("green");
+
+    
+    if(scoreleftwrist>0.2)
+    {
+circle(leftWristX, leftWristY, 20);
+song_1.stop();
+if(song_status_1==false)
+{
+song.play();
+document.getElementById("james").innerHTML=" playing Pycres";
+
+}
+    }
+
+if(scorerightwrist>0.2)
+{
+circle(rightWristX, rightWristY, 20);
+song.stop();
+if(song_status==false)
+{
+song_1.play();
+document.getElementById("james").innerHTML=" playing Clear";
+
+} 
+}
 }
 
 function play()
